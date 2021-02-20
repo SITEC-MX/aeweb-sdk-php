@@ -1,0 +1,20 @@
+{
+    "name": "sitec/aeweb",
+    "description": "SDK para PHP del Administrador de Empresas Web",
+    "type": "project",
+    "authors": [
+        {
+            "name": "SiTEC",
+            "email": "contacto@sistemasespecializados.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Mpsoft\\AEWeb\\": "src/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "7.0"
+    }
+}
