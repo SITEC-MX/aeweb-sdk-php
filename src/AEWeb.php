@@ -99,6 +99,11 @@ class AEWeb
             $opciones = array();
             $opciones["auth"] = array("app", $this->token);
 
+            if($body)
+            {
+                $opciones["json"] = $body;
+            }
+
             $response = NULL;
             try
             {
@@ -162,7 +167,12 @@ class AEWeb
 	public function PATCH_ContabilidadCuentas(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/contabilidad/cuentas/<id>"; return $this->API_CALL("PATCH", $url, $variables, $querystrings, $body); }
 	public function GET_Documentos(?array $variables=NULL,?array $querystrings=NULL){ $url = NULL; $variables_key = $this->ObtenerFirmaDeVariables($variables); switch($variables_key) { case "empresa": $url = "<empresa>/documentos"; break; case "empresa-id": $url = "<empresa>/documentos/<id>"; break; case "aleatorio-empresa-id": $url = "<empresa>/documentos/<id>/<aleatorio>"; break;  default: $url = "<empresa>/documentos/<id>/<aleatorio>"; break; } return $this->API_CALL("GET", $url, $variables, $querystrings, NULL); }
 	public function POST_Documentos(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/documentos"; return $this->API_CALL("POST", $url, $variables, $querystrings, $body); }
-	public function POST_DocumentosQuery(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/documentos/query"; return $this->API_CALL("POST", $url, $variables, $querystrings, $body); }
+	public function POST_DocumentosQuery(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL)
+    {
+        $url = "<empresa>/documentos/query";
+
+        return $this->API_CALL("POST", $url, $variables, $querystrings, $body);
+    }
 	public function DELETE_Documentos(?array $variables=NULL,?array $querystrings=NULL){ $url = "<empresa>/documentos/<id>"; return $this->API_CALL("DELETE", $url, $variables, $querystrings, NULL); }
 	public function PATCH_Documentos(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/documentos/<id>"; return $this->API_CALL("PATCH", $url, $variables, $querystrings, $body); }
 	public function GET_DocumentosAleatorio(?array $variables=NULL,?array $querystrings=NULL){ $url = "<empresa>/documentos/<rfc>/<folio>/aleatorio"; return $this->API_CALL("GET", $url, $variables, $querystrings, NULL); }
