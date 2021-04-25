@@ -99,6 +99,11 @@ class AEWeb
             $opciones = array();
             $opciones["auth"] = array("app", $this->token);
 
+            if($body)
+            {
+                $opciones["json"] = $body;
+            }
+
             $response = NULL;
             try
             {
