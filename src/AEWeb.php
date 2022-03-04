@@ -157,6 +157,7 @@ class AEWeb
 	public function POST_TiendaHreflangs(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/tienda/hreflangs"; return $this->API_CALL("POST", $url, $variables, $querystrings, $body); }
 	public function DELETE_TiendaHreflangs(?array $variables=NULL,?array $querystrings=NULL){ $url = "<empresa>/tienda/hreflangs/<id>"; return $this->API_CALL("DELETE", $url, $variables, $querystrings, NULL); }
 	public function PATCH_TiendaHreflangs(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/tienda/hreflangs/<id>"; return $this->API_CALL("PATCH", $url, $variables, $querystrings, $body); }
+	public function POST_TiendaHreflangsQuery(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/tienda/hreflangs/query"; return $this->API_CALL("POST", $url, $variables, $querystrings, $body); }
 	public function GET_SesionPerfil(?array $variables=NULL,?array $querystrings=NULL){ $url = "<empresa>/sesion/perfil"; return $this->API_CALL("GET", $url, $variables, $querystrings, NULL); }
 	public function POST_SesionVerificarCredenciales(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/sesion/verificar-credenciales"; return $this->API_CALL("POST", $url, $variables, $querystrings, $body); }
 	public function POST_SesionLogin(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/sesion/login"; return $this->API_CALL("POST", $url, $variables, $querystrings, $body); }
