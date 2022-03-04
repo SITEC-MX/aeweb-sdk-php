@@ -15,6 +15,7 @@ class AEWeb
 {
     private $empresa = NULL;
     private $token = NULL;
+    private $token_tipo = NULL;
     private $host = "aeweb.svc-sitec.com";
 
     private $guzzle = NULL;
@@ -24,10 +25,11 @@ class AEWeb
     public const ENDPOINT_ERROR_GENERAR = 950;
     public const RESPUESTA_NO_DISPONIBLE = 951;
 
-    function __construct(string $empresa, string $token)
+    function __construct(string $empresa, string $token, string $token_tipo = "app")
     {
         $this->empresa = $empresa;
         $this->token = $token;
+        $this->token_tipo = $token_tipo;
 
         $this->guzzle = new Client();
     }
@@ -97,7 +99,7 @@ class AEWeb
         {
             // Generamos las opciones
             $opciones = array();
-            $opciones["auth"] = array("app", $this->token);
+            $opciones["auth"] = array($this->token_tipo, $this->token);
 
             if($body)
             {
