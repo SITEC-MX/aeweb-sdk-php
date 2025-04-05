@@ -24,6 +24,21 @@ class AEWeb
     public const NO_IMPLEMENTADO = 0;
     public const ENDPOINT_ERROR_GENERAR = 950;
     public const RESPUESTA_NO_DISPONIBLE = 951;
+	public const OK = 1;
+
+    public const OPERADOR_IGUAL = 1;
+    public const OPERADOR_MAYORQUE = 2;
+    public const OPERADOR_MAYOROIGUALQUE = 3;
+    public const OPERADOR_MENORQUE = 4;
+    public const OPERADOR_MENOROIGUALQUE = 5;
+    public const OPERADOR_DIFERENTE = 6;
+    public const OPERADOR_LIKE = 7;
+    public const OPERADOR_IN = 8;
+    public const OPERADOR_IGUAL_BINARIO = 9;
+    public const OPERADOR_NOT_IN = 10;
+
+    public const LOGICA_Y = 1;
+    public const LOGICA_O = 2;
 
     function __construct(string $empresa, string $token, string $token_tipo = "app")
     {
@@ -71,8 +86,7 @@ class AEWeb
         return "https://{$endpoint_url}{$querystring}";
     }
 
-
-    private function API_CALL(string $metodo, string $url, ?array $variables=NULL, ?array $querystrings=NULL, ?array $body=NULL)
+    public function API_CALL(string $metodo, string $url, ?array $variables=NULL, ?array $querystrings=NULL, ?array $body=NULL)
     {
         $estado = array("estado"=>AEWeb::NO_IMPLEMENTADO, "mensaje"=>"OK");
 
