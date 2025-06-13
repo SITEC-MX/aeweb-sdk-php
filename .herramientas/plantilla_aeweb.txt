@@ -127,7 +127,7 @@ class AEWeb
             }
             catch(Throwable $t) // Error al generar la URL del Endpoint
             {
-                $response = $t->getResponse();
+                $response = $t->getMessage();
             }
 
             if($response) // Si hay respuesta
