@@ -16,7 +16,7 @@ class AEWeb
     private $empresa = NULL;
     private $token = NULL;
     private $token_tipo = NULL;
-    private $host = "aeweb.sitec-mx.com";
+    private $host = "api.aeweb.app";
 
     private $guzzle = NULL;
     private $openapi = NULL;
