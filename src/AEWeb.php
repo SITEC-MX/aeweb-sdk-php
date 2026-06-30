@@ -346,6 +346,7 @@ class AEWeb
 	public function POST_MovimientoFolios(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/movimiento/folios"; return $this->API_CALL("POST", $url, $variables, $querystrings, $body); }
 	public function PATCH_MovimientoFolios(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/movimiento/folios/<id>"; return $this->API_CALL("PATCH", $url, $variables, $querystrings, $body); }
 	public function DELETE_MovimientoFolios(?array $variables=NULL,?array $querystrings=NULL){ $url = "<empresa>/movimiento/folios/<id>"; return $this->API_CALL("DELETE", $url, $variables, $querystrings, NULL); }
+	public function GET_EstadosDeCuenta(?array $variables=NULL,?array $querystrings=NULL){ $url = "<empresa>/estados-de-cuenta/<cliente_id>"; return $this->API_CALL("GET", $url, $variables, $querystrings, NULL); }
 	public function GET_ContactoPedidosactivos(?array $variables=NULL,?array $querystrings=NULL){ $url = "<empresa>/contacto/<id>/pedidosactivos"; return $this->API_CALL("GET", $url, $variables, $querystrings, NULL); }
 	public function GET_ContactoCobrosporaplicar(?array $variables=NULL,?array $querystrings=NULL){ $url = "<empresa>/contacto/<id>/cobrosporaplicar"; return $this->API_CALL("GET", $url, $variables, $querystrings, NULL); }
 	public function POST_ContactoExpediente(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/contacto/expediente"; return $this->API_CALL("POST", $url, $variables, $querystrings, $body); }
