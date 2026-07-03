@@ -106,7 +106,7 @@ class AEWeb
         }
         catch(Throwable $t) // Error al generar la URL de la llamada
         {
-            $estado = array("estado"=>AEWeb::ENDPOINT_ERROR_GENERAR, "mensaje"=>"Error al generar la URL de la llamada.", "debug"=> utf8_encode($t->getMessage()));
+            $estado = array("estado"=>AEWeb::ENDPOINT_ERROR_GENERAR, "mensaje"=>"Error al generar la URL de la llamada.", "debug"=> $t->getMessage());
         }
 
         if($endpoint_url) // Si se obtiene la URL de la llamada

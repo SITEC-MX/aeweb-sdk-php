@@ -31,12 +31,12 @@ foreach($OPENAPI as $url_patron => $url_info) // Para cada llamada disponible
     $script_php_ruta_elementos = preg_split('/(\/|-)/', $script_php_ruta); // Separamos por / y -
 
     $nombre_base = "";
-    foreach($script_php_ruta_elementos as $ruta_elemento) // Para cada sección del nombre
+    foreach($script_php_ruta_elementos as $ruta_elemento) // Para cada secciÃ³n del nombre
     {
         $nombre_base .= ucfirst($ruta_elemento);
     }
 
-    foreach($url_info["metodos"] as $metodo=>$metodo_info) // Para cada método que la llamada soporta
+    foreach($url_info["metodos"] as $metodo=>$metodo_info) // Para cada mÃ©todo que la llamada soporta
     {
         $funcion_nombre = "{$metodo}_{$nombre_base}";
 
@@ -65,12 +65,12 @@ foreach($OPENAPI as $url_patron => $url_info) // Para cada llamada disponible
                 break;
 
             default:
-                throw new Exception("Método no implementado");
+                throw new Exception("MÃ©todo no implementado");
         }
 
         $funcion_parametros_str = implode(",", $funcion_parametros);
 
-        if(!isset($funciones_php[$funcion_nombre])) // Si la función no está definida
+        if(!isset($funciones_php[$funcion_nombre])) // Si la funciÃ³n no estÃ¡ definida
         {
             $funciones_php[$funcion_nombre] = array("metodo"=>$metodo, "parametros"=>$funcion_parametros_str, "parametros_apicall"=>$funcion_parametros_apicall_str, "llamadas"=>array());
         }
@@ -81,7 +81,7 @@ foreach($OPENAPI as $url_patron => $url_info) // Para cada llamada disponible
     }
 }
 
-// Generamos el código PHP de las funciones
+// Generamos el cÃ³digo PHP de las funciones
 $funciones = "";
 foreach($funciones_php as $funcion_nombre=>$funcion_parametros)
 {
@@ -91,7 +91,7 @@ foreach($funciones_php as $funcion_nombre=>$funcion_parametros)
 
     $body = "";
 
-    if( count($funcion_parametros["llamadas"]) > 1) // Si es una llamada con múltiples URLs
+    if( count($funcion_parametros["llamadas"]) > 1) // Si es una llamada con mÃºltiples URLs
     {
         $body .= "\$url = NULL; ";
 
@@ -115,7 +115,7 @@ foreach($funciones_php as $funcion_nombre=>$funcion_parametros)
         $body .= " default: \$url = \"{$url}\"; break; ";
         $body .= "} ";
     }
-    else // Si sólo hay una URL
+    else // Si sÃ³lo hay una URL
     {
         $llamada = $funcion_parametros["llamadas"][0];
         $url = $llamada["url"];
