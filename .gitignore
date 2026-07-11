@@ -1,6 +1,4 @@
 .vs/
 vendor/
 
-composer.lock
-
 AEWeb-SDK-PHP.phpproj.user

@@ -40,6 +40,20 @@ class AEWeb
     public const LOGICA_Y = 1;
     public const LOGICA_O = 2;
 
+    public const DATO_BOOL = 1;
+    public const DATO_CHAR = 2;
+    public const DATO_INT = 3;
+    public const DATO_FLOAT = 4;
+    public const DATO_DOUBLE = 5;
+    public const DATO_STRING = 6;
+    public const DATO_DATE = 7;
+    public const DATO_DATETIME = 8;
+    public const DATO_TEXT = 9;
+    public const DATO_TIME = 10;
+    public const DATO_OBJECT = 11;
+    public const DATO_ARRAY = 12;
+    public const DATO_FILE = 13;
+
     function __construct(string $empresa, string $token, string $token_tipo = "app")
     {
         $this->empresa = $empresa;
@@ -231,6 +245,8 @@ class AEWeb
 	public function GET_ContabilidadFacturasglobales(?array $variables=NULL,?array $querystrings=NULL){ $url = NULL; $variables_key = $this->ObtenerFirmaDeVariables($variables); switch($variables_key) { case "empresa": $url = "<empresa>/contabilidad/facturasglobales"; break; case "empresa-id": $url = "<empresa>/contabilidad/facturasglobales/<id>"; break;  default: $url = "<empresa>/contabilidad/facturasglobales/<id>"; break; } return $this->API_CALL("GET", $url, $variables, $querystrings, NULL); }
 	public function POST_ContabilidadFacturasglobales(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/contabilidad/facturasglobales"; return $this->API_CALL("POST", $url, $variables, $querystrings, $body); }
 	public function DELETE_ContabilidadFacturasglobales(?array $variables=NULL,?array $querystrings=NULL){ $url = "<empresa>/contabilidad/facturasglobales/<id>"; return $this->API_CALL("DELETE", $url, $variables, $querystrings, NULL); }
+	public function PATCH_ContabilidadFacturasglobalesTimbrar(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/contabilidad/facturasglobales/<id>/timbrar"; return $this->API_CALL("PATCH", $url, $variables, $querystrings, $body); }
+	public function DELETE_ContabilidadFacturasglobalesTimbrar(?array $variables=NULL,?array $querystrings=NULL){ $url = "<empresa>/contabilidad/facturasglobales/<id>/timbrar"; return $this->API_CALL("DELETE", $url, $variables, $querystrings, NULL); }
 	public function GET_ContabilidadDescargasmasivasNotificar(?array $variables=NULL,?array $querystrings=NULL){ $url = "<empresa>/contabilidad/descargasmasivas/<id>/notificar"; return $this->API_CALL("GET", $url, $variables, $querystrings, NULL); }
 	public function GET_ContabilidadDescargasmasivas(?array $variables=NULL,?array $querystrings=NULL){ $url = NULL; $variables_key = $this->ObtenerFirmaDeVariables($variables); switch($variables_key) { case "empresa": $url = "<empresa>/contabilidad/descargasmasivas"; break; case "empresa-id": $url = "<empresa>/contabilidad/descargasmasivas/<id>"; break;  default: $url = "<empresa>/contabilidad/descargasmasivas/<id>"; break; } return $this->API_CALL("GET", $url, $variables, $querystrings, NULL); }
 	public function POST_ContabilidadDescargasmasivas(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/contabilidad/descargasmasivas"; return $this->API_CALL("POST", $url, $variables, $querystrings, $body); }
@@ -255,6 +271,7 @@ class AEWeb
 	public function POST_ContabilidadImportadorcfdiEquivalencias(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/contabilidad/importadorcfdi/equivalencias"; return $this->API_CALL("POST", $url, $variables, $querystrings, $body); }
 	public function PATCH_ContabilidadImportadorcfdiEquivalencias(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/contabilidad/importadorcfdi/equivalencias/<id>"; return $this->API_CALL("PATCH", $url, $variables, $querystrings, $body); }
 	public function DELETE_ContabilidadImportadorcfdiEquivalencias(?array $variables=NULL,?array $querystrings=NULL){ $url = "<empresa>/contabilidad/importadorcfdi/equivalencias/<id>"; return $this->API_CALL("DELETE", $url, $variables, $querystrings, NULL); }
+	public function POST_ContabilidadDocumentoscobrados(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/contabilidad/documentoscobrados"; return $this->API_CALL("POST", $url, $variables, $querystrings, $body); }
 	public function GET_RutaLugares(?array $variables=NULL,?array $querystrings=NULL){ $url = NULL; $variables_key = $this->ObtenerFirmaDeVariables($variables); switch($variables_key) { case "empresa": $url = "<empresa>/ruta/lugares"; break; case "empresa-id": $url = "<empresa>/ruta/lugares/<id>"; break;  default: $url = "<empresa>/ruta/lugares/<id>"; break; } return $this->API_CALL("GET", $url, $variables, $querystrings, NULL); }
 	public function POST_RutaLugares(?array $variables=NULL,?array $querystrings=NULL,?array $body=NULL){ $url = "<empresa>/ruta/lugares"; return $this->API_CALL("POST", $url, $variables, $querystrings, $body); }
 	public function DELETE_RutaLugares(?array $variables=NULL,?array $querystrings=NULL){ $url = "<empresa>/ruta/lugares/<id>"; return $this->API_CALL("DELETE", $url, $variables, $querystrings, NULL); }

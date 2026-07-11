@@ -1,6 +1,6 @@
 <?php
 /**
- * Sistemas Especializados e Innovación Tecnológica, SA de CV
+ * Sistemas Especializados e InnovaciÃ³n TecnolÃ³gica, SA de CV
  * SiTEC AE - Administrador de Empresas Web
  *
  * v.1.0.0.0 - 2021-02-19
@@ -40,6 +40,20 @@ class AEWeb
     public const LOGICA_Y = 1;
     public const LOGICA_O = 2;
 
+    public const DATO_BOOL = 1;
+    public const DATO_CHAR = 2;
+    public const DATO_INT = 3;
+    public const DATO_FLOAT = 4;
+    public const DATO_DOUBLE = 5;
+    public const DATO_STRING = 6;
+    public const DATO_DATE = 7;
+    public const DATO_DATETIME = 8;
+    public const DATO_TEXT = 9;
+    public const DATO_TIME = 10;
+    public const DATO_OBJECT = 11;
+    public const DATO_ARRAY = 12;
+    public const DATO_FILE = 13;
+
     function __construct(string $empresa, string $token, string $token_tipo = "app")
     {
         $this->empresa = $empresa;
@@ -67,7 +81,7 @@ class AEWeb
                 }
                 else // Si no se proporciona la variable requerida
                 {
-                    throw new Exception("No se proporcionó la variable '{$variable_nombre}'.");
+                    throw new Exception("No se proporcionÃ³ la variable '{$variable_nombre}'.");
                 }
             }
             else // Si no es una variable
