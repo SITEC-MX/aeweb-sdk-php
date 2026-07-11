@@ -54,6 +54,18 @@ class AEWeb
     public const DATO_ARRAY = 12;
     public const DATO_FILE = 13;
 
+
+
+    public const IMAGENOPTIMIZADA_TIPO_ORIGINAL = 1;
+    public const IMAGENOPTIMIZADA_TIPO_HORIZONTAL = 2;
+    public const IMAGENOPTIMIZADA_TIPO_VERTICAL = 3;
+    public const IMAGENOPTIMIZADA_TIPO_CUADRADO = 4;
+
+    public const IMAGENOPTIMIZADA_TAMANO_CHICO = 1;
+    public const IMAGENOPTIMIZADA_TAMANO_GRANDE = 2;
+
+
+
     function __construct(string $empresa, string $token, string $token_tipo = "app")
     {
         $this->empresa = $empresa;
